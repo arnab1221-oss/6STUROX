@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Place Order - STUROX</title><link rel="stylesheet" href="assets/styles.css"></head>
+<body>
+<div class="container">
+  <h2>Order Details</h2>
+  <form id="orderForm" method="post" action="payment.html" onsubmit="return toPayment(event)">
+    <label>Name:<br><input required id="o_name" name="o_name"></label><br>
+    <label>Roll / ID:<br><input required id="o_roll" name="o_roll"></label><br>
+    <label>Number of Black & White pages:<br><input type="number" min="0" value="0" id="bw" name="bw"></label><br>
+    <label>Number of Colour pages:<br><input type="number" min="0" value="0" id="color" name="color"></label><br><br>
+
+    <div class="summary">
+      <p>Price per B&W page: Rs. 1</p>
+      <p>Price per Colour page: Rs. 3</p>
+      <p>Total: Rs. <span id="total">0</span></p>
+    </div>
+
+    <label><input type="checkbox" id="confirmOrder"> I confirm that I want to order and I will pay the payment.</label><br><br>
+    <button class="btn" type="submit">Proceed to Payment</button>
+  </form>
+  <p><a href="index.html">&larr; Back to Home</a></p>
+</div>
+<script src="assets/app.js"></script>
+</body>
+</html>

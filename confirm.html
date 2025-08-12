@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Confirm & Submit - STUROX</title><link rel="stylesheet" href="assets/styles.css"></head>
+<body>
+<div class="container">
+  <h2>Final Submission</h2>
+  <form id="finalForm" action="upload.php" method="post" enctype="multipart/form-data" onsubmit="return checkFinal(event)">
+    <fieldset>
+      <legend>Customer / Order Info (auto-filled if available)</legend>
+      <label>Full name: <input id="f_name" name="f_name" required></label><br>
+      <label>Roll / ID: <input id="f_roll" name="f_roll" required></label><br>
+      <label>Phone: <input id="f_phone" name="f_phone" pattern='[0-9]{10}' required></label><br>
+      <label>Email (optional): <input id="f_email" name="f_email" type="email"></label><br>
+    </fieldset>
+
+    <fieldset>
+      <legend>Files to send (you can select again)</legend>
+      <input type="file" name="uploaded_files[]" multiple required><br>
+    </fieldset>
+
+    <fieldset>
+      <legend>Order details</legend>
+      <label>Number of B&W pages: <input type="number" name="bw_pages" min="0" value="0"></label><br>
+      <label>Number of Colour pages: <input type="number" name="color_pages" min="0" value="0"></label><br>
+      <label>Order Total (computed server-side too): Rs. <input type="text" name="order_total" id="order_total" readonly></label><br>
+    </fieldset>
+
+    <fieldset>
+      <legend>Payment</legend>
+      <label>Payment method:
+        <select id="final_pay_method" name="final_pay_method">
+          <option value="upi">UPI (online)</option>
+          <option value="cod">Cash on delivery</option>
+        </select>
+      </label><br>
+      <label>Payment screenshot (required if UPI): <input id="final_pay_screenshot" name="payment_screenshot" type="file" accept="image/*"></label><br>
+      <label><input type="checkbox" id="final_confirm" name="final_confirm"> I confirm that I want to order and I will pay the payment.</label><br>
+    </fieldset>
+
+    <button class="btn" type="submit">Submit Order</button>
+  </form>
+  <p><a href="index.html">&larr; Back to Home</a></p>
+</div>
+<script src="assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Payment - STUROX</title><link rel="stylesheet" href="assets/styles.css"></head>
+<body>
+<div class="container">
+  <h2>Payment</h2>
+  <p>UPI ID: <strong>8972548589@ibl</strong></p>
+  <p>Scan the QR or click the quick-pay link to open payment apps (PhonePe, Paytm etc.).</p>
+
+  <label>Upload QR image (optional) to show on this page:<br><input id="qr" type="file" accept="image/*"></label><br><br>
+  <div id="qrPreview"></div>
+
+  <p>Quick pay links (click if supported by your device):</p>
+  <ul>
+    <li><a id="phonepeLink" href="#">Pay with PhonePe</a></li>
+    <li><a id="paytmLink" href="#">Pay with Paytm</a></li>
+    <li><a id="gpayLink" href="#">Pay with Google Pay</a></li>
+  </ul>
+
+  <hr>
+  <form id="payForm" action="confirm.html" method="get" enctype="multipart/form-data" onsubmit="return goConfirm(event)">
+    <label>Payment method:<br>
+      <select id="pay_method" name="pay_method">
+        <option value="upi">UPI (online)</option>
+        <option value="cod">Cash on delivery</option>
+      </select>
+    </label><br>
+    <label>Upload payment screenshot (required if paid online):<br><input id="pay_screenshot" name="pay_screenshot" type="file" accept="image/*"></label><br>
+    <small>After payment, you may optionally share the screenshot via email.</small><br><br>
+    <button class="btn" type="submit">Confirm & Submit</button>
+  </form>
+
+  <p><a href="order.html">&larr; Back to Order</a></p>
+</div>
+<script src="assets/app.js"></script>
+</body>
+</html>

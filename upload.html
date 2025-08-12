@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Upload - STUROX</title><link rel="stylesheet" href="assets/styles.css"></head>
+<body>
+<div class="container">
+  <h2>Upload Files</h2>
+  <form id="uploadForm" action="confirm.html" method="get" enctype="multipart/form-data" onsubmit="return goNext(event)">
+    <label>Full Name:<br><input required name="fullname" id="fullname"></label><br>
+    <label>Roll / ID:<br><input required name="roll" id="roll"></label><br>
+    <label>Choose files (PDF, JPG, PNG, DOCX, TIFF, etc.)<br>
+      <input id="files" name="files" type="file" multiple accept="application/pdf,image/*,application/*">
+    </label><br>
+    <small>Accepted: Any common file format. Files will be sent to STUROX when you place the final order.</small><br><br>
+    <button class="btn" type="submit">Continue</button>
+  </form>
+
+  <p><a href="index.html">&larr; Back to Home</a></p>
+</div>
+<script src="assets/app.js"></script>
+</body>
+</html>
